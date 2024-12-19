@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(201, 198, 219);
+  
+}
+
+nav {
+  height: 45px;
+  background-color:rgb(65, 60, 87);
+  color: #000000;
+    padding-bottom:20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 27px;
+  font-family: "Inter", sans-serif;
+}
+
+nav ul {
+  list-style-type: none;
+  height: 112px;
+}
+
+.g-container {
+   background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  
+}
+
+.container {
+  font-family: "Inter", sans-serif;
+  display: grid;
+  grid-template-rows: repeat(3, 10vw);
+  grid-template-columns: repeat(3, 10vw);  /* repeating it 3 times with width as 10 viewport */
+  position: relative;
+}
+/* ... existing CSS ... */
+
+.box {
+  border: 3px solid black; /* Set border color to black */
+  font-size: 8vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the text vertically */
+}
+.box:hover {
+  background-color: rgb(25, 22, 41);
+}
+
+/* ... existing CSS ... */
+
+
+.info
+{
+  font-size: 25px;
+}
+
+/* game info class*/
+
+.game-info {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  padding: 0 34px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+
+
+/*  image  class*/
+.img {
+  display: block; 
+  margin-top: 10px; 
+  transition: width 1s ease-in-out;
+}
+
+.img img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+
+/* make the border right become 0  */
+.br-0{
+ border-right:0;
+} 
+
+/* make the border aleft become 0  */
+.bl-0
+{
+ border-left: 0;
+}
+
+
+/* make the border top become 0  */
+.bt-0
+{
+ border-top: 0;
+}
+
+
+/* make the border bottom become 0  */
+.bb-0
+{
+ border-bottom: 0;
+}
+
+
+
+/* button class*/
+
+#reset
+{
+   margin:0 23px;
+   padding:1px 18px;
+   background:#f3e7f9;
+   border-radius: 6px;
+   cursor: pointer;
+   font-family:'Open Sans' , Arial, Helvetica, sans-serif  ;
+   font-size:15px;
+   font-weight: bold;
+
+}
+
+
+
+  .line {
+    background-color: black; /* Ensure the line is black */
+    height: 3px;
+    width: 0;
+    position: absolute;
+    transition: width 0.4s ease-in-out;
+  }
+
+
+
+/* media query */
+@media  screen and (max-width : 950px)
+{
+  .g-container
+  {
+    flex-wrap: wrap;
+  }
+  .game-info
+  {
+    margin-top:34px;
+
+  }
+
+  .heading
+  {
+    font-size: 1.5rem;
+  }
+
+  .container { 
+    grid-template-rows: repeat(3, 20vw);
+    grid-template-columns: repeat(3, 20vw);
+}
+}
+
+
+
+/* we will add the images for when player win loses and draw*/
+
+.you-win,
+.you-lose,
+.game-over {
+  width: 0px; /* Start hidden */
+  transition: width 0.5s ease; /* Smooth transition when shown */
+}
+
+
+/* for the images to take the entire space when the user wins or loses */
+
+/* Overlay to cover the full screen */
+.overlay {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Above everything */
+}
+
+#result-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+
+
+
+
+
+
+/* intro page css starts from here*/
+
+
+
+
+.intro-container {
+  text-align: center;
+  justify-content: center;
+  padding-top: 30px;
+  font-family: "Roboto", sans-serif; 
+  display: flex;
+  flex-direction: column;
+  padding-top:30px;
+}
+
+/* Styling for the h2 element within the intro container */
+.intro-container > h2 {
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: rgb(50, 50, 50);
+}
+
+/* Styling for the paragraph within the intro container */
+.intro-container > p {
+  font-size: 15px;
+  color: rgb(50, 50, 50);
+}
+
+/* Styling for player instructions */
+.player-instruction {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  margin-right: 50%;
+  text-align: center;
+  justify-content: center;
+  width:100%;
+  padding-top: 40px;
+  color: rgb(50, 50, 50);
+ 
+}
+
+.player-instruction ul{
+  list-style-type: none; /* use to remove the bullet points*/
+  padding:0px;
+  margin:0px;
+}
+
+.button
+{
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  margin-right: 50%;
+  text-align: center;
+  justify-content: center;
+  width:100%;
+  padding-top: 40px;
+  
+}
+
+
+.button > .start-game
+{
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(65, 60, 87);
+  border-radius: 20px;
+   width:15%;
+   height: auto;
+}
+
+
+
+
+
