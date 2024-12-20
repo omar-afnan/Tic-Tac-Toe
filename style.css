@@ -285,6 +285,48 @@ nav ul {
 }
 
 
+/*  score table css*/
+
+
+.table > h2
+{
+   display: flex;
+   justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "OpenSans" ,Arial, Helvetica, sans-serif;
+}
+
+.tb 
+{
+  margin:0 auto;
+  border-collapse: collapse; /*removes the gap between the cells*/
+  font-size: 28px;
+}
+
+
+.tb th, .tb td
+{
+  text-align: center;
+  padding: 10px;
+  border: 1px solid black ;
+}
 
 
 
+/* for the close button */
+.result-container {
+  position: relative;
+  display: inline-block;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
