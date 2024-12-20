@@ -27,7 +27,7 @@
 
     <h1 class="heading"
         style="padding : 0 34px; font-family: 'Open Sans' , Arial, Helvetica, sans-serif ;  text-align: center ; font-size: 40px;">
-        welcome to tic tac toe </h1>
+        Welcome To Tic Tac Toe </h1>
 
     <div class="g-container"> <!-- game container -->
         <div class="container">
@@ -55,17 +55,44 @@
         </div>
 
         <!-- make another div element and add images inside it -->
-
-
-
         <div class="overlay" id="overlay">
-            <img src="Images/win.jpg" alt="Result Image" class="you-win" style="width:50%;" id="result-image"> 
-            <img src="Images/you lose.jpg" alt="Result Image"  class="you-lose" id="result-image">
-            <img src="Images/game-over.png" alt="Result Image"class="game-over" id="result-image">
+            <div class="reset-container">
+                <img src="Images/win.jpg" alt="Result Image" class="you-win" style="width:50%;" id="result-image">
+                <button class="close-btn" onclick="closedOverlay()">X</button> 
+            </div>
+            <!-- we will add a close X  function where the person win the game it will show the image and from their user will press x to close the image -->
+               
+            <div class="reset-container">
+                <img src="Images/you lose.jpg" alt="Result Image"  class="you-lose" id="result-image">
+                <button class="close-btn"  onclick="closedOverlay()">X</button> 
+            </div>
+           
+
+            <div class="reset-container">
+                <img src="Images/game-over.png" alt="Result Image"class="game-over" id="result-image">
+                <button class="close-btn"  onclick="closedOverlay()">X</button> 
+            </div>
+            
         </div>
 
     </div>
 
+    <div class="table">
+        <h2>The Score-Board</h2>
+        <table class="tb">
+          <tr> <!-- Header row -->
+            <th>X</th>
+            <th>O</th>
+            <th>Draw</th>
+          </tr>
+          <tr> <!-- Data row -->
+            <td id="score-x">0</td>
+            <td id="score-o">0</td>
+            <td id="score-draw">0</td>
+          </tr>
+        </table>
+      </div>
+      
     <script src="index.js"></script>
 </body>
 
