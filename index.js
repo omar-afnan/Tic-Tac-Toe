@@ -42,15 +42,16 @@ const checkWin = () => {
       isgameover = true;
       gameover = true;
 
-      // Show the "You Win" image only when a player wins
       if (boxtext[e[0]].innerText === "X") {
         document.querySelector('.info').innerText = "X Wins!";
         document.querySelector('.you-win').style.width = "200px";
         music.play(); // Winning sound
+        updateScore("X"); // Update score for X
       } else {
         document.querySelector('.info').innerText = "O Wins!";
         document.querySelector('.you-lose').style.width = "200px";
         audioturn.play(); // Losing sound
+        updateScore("O"); // Update score for O
       }
 
       // Draw winning line
@@ -75,6 +76,7 @@ const checkWin = () => {
       document.querySelector('.game-over').style.width = "200px"; // Show 'Game Over' image
       document.querySelector('.overlay').style.display = "flex";
       gameOver.play(); // Draw sound
+      updateScore("Draw"); // Update score for Draw
     }
   }
 };
@@ -95,6 +97,7 @@ Array.from(boxes).forEach(element => {
   });
 });
 
+// Adding listener for reset
 // Adding listener for reset
 let resetButton = document.getElementById("reset"); // Make sure you have a reset button with id="reset"
 
@@ -121,4 +124,39 @@ resetButton.addEventListener('click', () => {
   document.querySelector('.you-lose').style.width = "0px";
   document.querySelector('.game-over').style.width = "0px";
   document.querySelector(".line").style.width = "0";
+
+  // Reset scores
+  scoreX = 0;
+  scoreO = 0;
+  scoreDraw = 0;
+  document.getElementById("score-x").innerText = scoreX;
+  document.getElementById("score-o").innerText = scoreO;
+  document.getElementById("score-draw").innerText = scoreDraw;
 });
+// for table score
+let scoreX = 0;
+let scoreO = 0;
+let scoreDraw = 0;
+
+function updateScore(winner) {
+  if (winner === "X") {
+    scoreX++;
+    document.getElementById("score-x").innerText = scoreX;
+  } else if (winner === "O") {
+    scoreO++;
+    document.getElementById("score-o").innerText = scoreO;
+  } else {
+    scoreDraw++;
+    document.getElementById("score-draw").innerText = scoreDraw;
+  }
+}
+
+
+
+// for user to close the image 
+
+
+function closedOverlay()
+{
+  document.querySelector(".overlay").style.display = "none";
+}
