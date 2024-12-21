@@ -42,6 +42,13 @@ nav ul {
   grid-template-columns: repeat(3, 10vw);  /* repeating it 3 times with width as 10 viewport */
   position: relative;
 }
+
+.g-container , .container , .game-info
+{
+  background-color: rgb(201, 198, 219);
+  
+}
+
 /* ... existing CSS ... */
 
 .box {
@@ -165,6 +172,19 @@ nav ul {
     grid-template-rows: repeat(3, 20vw);
     grid-template-columns: repeat(3, 20vw);
 }
+
+/* for mobile fixing the  game button and container area*/
+
+.start-game
+{
+   width:30%;
+
+}
+.g-container , .container , .game-info
+{
+  background-color: rgb(201, 198, 219);
+  
+}
 }
 
 
@@ -209,9 +229,6 @@ nav ul {
 
 
 /* intro page css starts from here*/
-
-
-
 
 .intro-container {
   text-align: center;
@@ -280,7 +297,7 @@ nav ul {
   color: rgb(255, 255, 255);
   background-color: rgb(65, 60, 87);
   border-radius: 20px;
-   width:15%;
+   width:25%;
    height: auto;
 }
 
