@@ -6,19 +6,19 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(201, 198, 219);
-  
+  background-color: #f6f7fb;
 }
 
 nav {
-  height: 45px;
-  background-color:rgb(65, 60, 87);
-  color: #000000;
-    padding-bottom:20px;
+  height: 56px;
+  background-color:#413C57;
+  color: #ffffff;
+  padding-bottom: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  font-size: 27px;
+  font-size: 24px;
   font-family: "Inter", sans-serif;
 }
 
@@ -28,39 +28,44 @@ nav ul {
 }
 
 .g-container {
-   background-color: #F5F5F5;
+  background-color: transparent;
   display: flex;
   justify-content: center;
-  margin-top: 50px;
-  
+  align-items: flex-start;
+  gap: 32px;
+  padding: 32px 16px;
 }
 
 .container {
   font-family: "Inter", sans-serif;
   display: grid;
   grid-template-rows: repeat(3, 10vw);
-  grid-template-columns: repeat(3, 10vw);  /* repeating it 3 times with width as 10 viewport */
+  grid-template-columns: repeat(3, 10vw);
   position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 }
 
 .g-container , .container , .game-info
 {
-  background-color: rgb(201, 198, 219);
-  
+  background-color: transparent;
 }
 
 /* ... existing CSS ... */
 
 .box {
-  border: 3px solid black; /* Set border color to black */
+  border: 2px solid #D2D6DB;
   font-size: 8vw;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center the text vertically */
+  align-items: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 .box:hover {
-  background-color: rgb(25, 22, 41);
+  background-color: #F0F2F5;
 }
 
 /* ... existing CSS ... */
@@ -68,7 +73,9 @@ nav ul {
 
 .info
 {
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #33353B;
 }
 
 /* game info class*/
@@ -77,23 +84,17 @@ nav ul {
   display: flex;
   flex-direction: column; 
   align-items: center; 
-  padding: 0 34px;
+  gap: 12px;
+  padding: 12px 16px;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 
 
-/*  image  class*/
-.img {
-  display: block; 
-  margin-top: 10px; 
-  transition: width 1s ease-in-out;
-}
-
-.img img {
-  max-width: 100%; 
-  height: auto; 
-}
+ 
 
 
 /* make the border right become 0  */
@@ -127,21 +128,25 @@ nav ul {
 
 #reset
 {
-   margin:0 23px;
-   padding:1px 18px;
-   background:#f3e7f9;
-   border-radius: 6px;
-   cursor: pointer;
-   font-family:'Open Sans' , Arial, Helvetica, sans-serif  ;
-   font-size:15px;
-   font-weight: bold;
-
+  margin: 0;
+  padding: 10px 16px;
+  background:#413C57;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family:'Open Sans' , Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+#reset:hover {
+  background: #2f2a40;
 }
 
 
 
   .line {
-    background-color: black; /* Ensure the line is black */
+    background-color: #6B7280;
     height: 3px;
     width: 0;
     position: absolute;
@@ -159,7 +164,7 @@ nav ul {
   }
   .game-info
   {
-    margin-top:34px;
+    margin-top: 24px;
 
   }
 
@@ -169,57 +174,30 @@ nav ul {
   }
 
   .container { 
-    grid-template-rows: repeat(3, 20vw);
-    grid-template-columns: repeat(3, 20vw);
+    grid-template-rows: repeat(3, 22vw);
+    grid-template-columns: repeat(3, 22vw);
 }
 
 /* for mobile fixing the  game button and container area*/
 
 .start-game
 {
-   width:30%;
-
+   width: 60%;
 }
 .g-container , .container , .game-info
 {
-  background-color: rgb(201, 198, 219);
-  
+  background-color: transparent;
 }
 }
 
 
 
-/* we will add the images for when player win loses and draw*/
-
-.you-win,
-.you-lose,
-.game-over {
-  width: 0px; /* Start hidden */
-  transition: width 0.5s ease; /* Smooth transition when shown */
-}
+ 
 
 
-/* for the images to take the entire space when the user wins or loses */
+ 
 
-/* Overlay to cover the full screen */
-.overlay {
-  display: none; /* Initially hidden */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  justify-content: center;
-  align-items: center;
-  z-index: 10; /* Above everything */
-}
-
-#result-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
+ 
 
 
 
@@ -307,43 +285,33 @@ nav ul {
 
 .table > h2
 {
-   display: flex;
-   justify-content: center;
-    font-size: 40px;
-    font-weight: bold;
-    font-family: "OpenSans" ,Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #33353B;
 }
 
 .tb 
 {
-  margin:0 auto;
+  margin: 8px auto 0 auto;
   border-collapse: collapse; /*removes the gap between the cells*/
-  font-size: 28px;
+  font-size: 18px;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
 
 .tb th, .tb td
 {
   text-align: center;
-  padding: 10px;
-  border: 1px solid black ;
+  padding: 12px 16px;
+  border: 1px solid #E5E7EB;
 }
 
 
 
-/* for the close button */
-.result-container {
-  position: relative;
-  display: inline-block;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: white;
-}
+ 

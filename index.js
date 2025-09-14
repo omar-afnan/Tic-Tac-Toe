@@ -1,8 +1,4 @@
 console.log("Welcome to Tic Tac Toe");
-
-let music = new Audio("Audio/congratulations-you-won.mp3");
-let audioturn = new Audio("Audio/you-lost-again-and-again.mp3");
-let gameOver = new Audio("Audio/Its a Draw Stand Down Sound Effect (Call of Duty Black Ops) [TubeRipper.com].m4a");
 let turn = "X";
 let isgameover = false;
 
@@ -26,12 +22,7 @@ const checkWin = () => {
   ];
 
   let gameover = false;
-
-  // Hide all images initially
-  document.querySelector('.you-win').style.width = "0px";
-  document.querySelector('.you-lose').style.width = "0px";
-  document.querySelector('.game-over').style.width = "0px";
-  document.querySelector('.overlay').style.display = "none";
+  
 
   wins.forEach(e => {
     if (
@@ -44,21 +35,17 @@ const checkWin = () => {
 
       if (boxtext[e[0]].innerText === "X") {
         document.querySelector('.info').innerText = "X Wins!";
-        document.querySelector('.you-win').style.width = "200px";
-        music.play(); // Winning sound
-        updateScore("X"); // Update score for X
+        updateScore("X");
       } else {
         document.querySelector('.info').innerText = "O Wins!";
-        document.querySelector('.you-lose').style.width = "200px";
-        audioturn.play(); // Losing sound
-        updateScore("O"); // Update score for O
+        updateScore("O");
       }
 
       // Draw winning line
       document.querySelector(".line").style.transform = `translate(${e[3]}vw, ${e[4]}vw) rotate(${e[5]}deg)`;
       document.querySelector(".line").style.width = "20vw";
 
-      document.querySelector('.overlay').style.display = "flex";
+      
     }
   });
 
@@ -73,10 +60,7 @@ const checkWin = () => {
     if (allFilled) {
       isgameover = true;
       document.querySelector('.info').innerText = "It's a Draw!";
-      document.querySelector('.game-over').style.width = "200px"; // Show 'Game Over' image
-      document.querySelector('.overlay').style.display = "flex";
-      gameOver.play(); // Draw sound
-      updateScore("Draw"); // Update score for Draw
+      updateScore("Draw");
     }
   }
 };
@@ -111,18 +95,7 @@ resetButton.addEventListener('click', () => {
   isgameover = false; // Reset game state
   document.querySelector(".info").innerText = "Turn for " + turn;
 
-  // Reset audio
-  music.pause();
-  music.currentTime = 0;
-  audioturn.pause();
-  audioturn.currentTime = 0;
-  gameOver.pause();
-  gameOver.currentTime = 0;
-
-  // Hide all images and reset the line
-  document.querySelector('.you-win').style.width = "0px";
-  document.querySelector('.you-lose').style.width = "0px";
-  document.querySelector('.game-over').style.width = "0px";
+  // Reset the winning line
   document.querySelector(".line").style.width = "0";
 
   // Reset scores
@@ -153,10 +126,4 @@ function updateScore(winner) {
 
 
 
-// for user to close the image 
-
-
-function closedOverlay()
-{
-  document.querySelector(".overlay").style.display = "none";
-}
+ 
